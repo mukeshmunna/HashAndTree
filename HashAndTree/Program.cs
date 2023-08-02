@@ -26,5 +26,20 @@ internal class Program
             if (sentence[i] != null)
                 Console.WriteLine("The Frequency of the Word " + sentence[i] + " is " + Count);
         }
+        Console.WriteLine("Enter the word to be Removed");
+        string word = Console.ReadLine();
+            int count = 0;
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                if (hash.Get(Convert.ToString(i)) == word)
+                {
+                    hash.Remove(Convert.ToString(i));
+                    count++;
+                }
+            }
+            if (count == 0)
+                Console.WriteLine("Enter the correct word to Remove");
+        
     }
+    
 }
