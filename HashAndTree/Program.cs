@@ -5,22 +5,26 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("HashTable and Binary tree!");
-        MapNode<string, string> hash = new MapNode<string, string>(5);
-        hash.Add("100", "hundred");
-        hash.Add("90", "ninty");
-        hash.Add("80", "eighty");
-        hash.Add("70", "seventy");
-        hash.Add("60", "sixty");
-        hash.Add("50", "fifty");
-        string hash5 = hash.Get("5");
-        Console.WriteLine("5th index value : " + hash5);
-        hash.Remove("2");
-        string hash2 = hash.Get("2");
-        Console.WriteLine("2th index value : " + hash2);
-
-
-
-
+        string statement = "To be or Not To be";
+        string[] sentence = statement.Split(" ");
+        MapNode<string, string> hash = new MapNode<string, string>(sentence.Length);
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            hash.Add(Convert.ToString(i), sentence[i]);
+        }
+        for (int i = 0; i < sentence.Length; i++)
+        {
+            int Count = 1;
+            for (int j = i + 1; j < sentence.Length; j++)
+            {
+                if (hash.Get(Convert.ToString(i)) == hash.Get(Convert.ToString(j)))
+                {
+                    Count++;
+                    sentence[j] = null;
+                }
+            }
+            if (sentence[i] != null)
+                Console.WriteLine("The Frequency of the Word " + sentence[i] + " is " + Count);
+        }
     }
 }
