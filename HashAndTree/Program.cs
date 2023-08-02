@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string statement = "To be or Not To be";
+        string statement = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         string[] sentence = statement.Split(" ");
         MapNode<string, string> hash = new MapNode<string, string>(sentence.Length);
         for (int i = 0; i < sentence.Length; i++)
