@@ -25,6 +25,7 @@ namespace HashAndTrees
             T currentNodeValue = this.NodeData;
             if ((currentNodeValue.CompareTo(item)) > 0)
             {
+                leftcount++;
                 if (this.LeftTree == null)
                     this.LeftTree = new BinarySearchTree<T>(item);
                 else
@@ -32,6 +33,7 @@ namespace HashAndTrees
             }
             else
             {
+                rightcount++;
                 if (this.RightTree == null)
                     this.RightTree = new BinarySearchTree<T>(item);
                 else
@@ -42,16 +44,18 @@ namespace HashAndTrees
         {
             if (this.LeftTree != null)
             {
-                this.leftcount++;
                 this.LeftTree.Display();
             }
             Console.WriteLine(this.NodeData.ToString());
             if (this.RightTree != null)
             {
-                this.rightcount++;
                 this.RightTree.Display();
 
             }
+        }
+        public void GetSize()
+        {
+            Console.WriteLine("Size" + " " + (1 + this.leftcount + this.rightcount));
         }
     }
 }
