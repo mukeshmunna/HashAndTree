@@ -41,6 +41,7 @@ internal class Program
              if (count == 0)
                  Console.WriteLine("Enter the correct word to Remove");*/
 
+
         BinarySearchTree<int> binarySearch = new BinarySearchTree<int>(56);
         binarySearch.Insert(30);
         binarySearch.Insert(70);
@@ -56,6 +57,7 @@ internal class Program
         binarySearch.Insert(67);
         binarySearch.Display();
         binarySearch.GetSize();
+        bool result = binarySearch.IfExists(67, binarySearch);
 
     }
     
